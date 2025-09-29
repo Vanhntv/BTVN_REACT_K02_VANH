@@ -27,7 +27,7 @@ const StudentRow = ({students}) => {
       <tr>
         <td>{students.id}</td>
         <td>{students.fullName}</td>
-        <td>{students.gender}</td>
+        <td>{students.gender ==="male" ? "Nam" : "Nữ"}</td>
         <td>{students.age}</td>
         <td>{students.major}</td>
         <td>{students.score}</td>
