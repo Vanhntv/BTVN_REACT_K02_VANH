@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 
 const GuessingGame = () => {
-  // Các state riêng biệt để dễ hiểu
-  const [secret, setSecret] = useState(null);       // số bí mật
-  const [input, setInput] = useState("");           // số người dùng nhập
-  const [attempts, setAttempts] = useState(10);     // số lượt còn lại
-  const [status, setStatus] = useState("idle");     // idle | playing | win | lose
-  const [guesses, setGuesses] = useState([]);       // lịch sử đoán
-  const [range, setRange] = useState(0);            // phạm vi độ khó
+  const [secret, setSecret] = useState(null);
+  const [input, setInput] = useState("");
+  const [attempts, setAttempts] = useState(10);
+  const [status, setStatus] = useState("idle");
+  const [guesses, setGuesses] = useState([]);
+  const [range, setRange] = useState(0);
 
-  // Hàm bắt đầu game mới
+
   const handleStart = (mode) => {
     let max = 50;
     if (mode === "medium") max = 100;
     if (mode === "hard") max = 200;
 
     const randomNumber = Math.floor(Math.random() * max) + 1;
-    console.log("🔒 Secret number:", randomNumber);
+    console.log("Secret number:", randomNumber);
 
     setSecret(randomNumber);
     setRange(max);
@@ -26,7 +25,6 @@ const GuessingGame = () => {
     setInput("");
   };
 
-  // Hàm xử lý đoán số
   const handleGuess = () => {
     if (!input) return;
     const num = parseInt(input, 10);
@@ -34,7 +32,7 @@ const GuessingGame = () => {
 
     const diff = Math.abs(secret - num);
 
-    // Cập nhật lịch sử đoán
+    
     setGuesses((prev) => [...prev, { value: num, diff }]);
 
     if (num === secret) {
@@ -49,17 +47,17 @@ const GuessingGame = () => {
     setInput("");
   };
 
-  // Xác định màu sắc của lịch sử đoán
+
   const getColor = (gap) => {
-    if (gap === 0) return "green"; // đúng
-    if (gap >= 1 && gap <= 3) return "darkgreen"; // rất gần
-    if (gap >= 4 && gap <= 6) return "lightgreen"; // gần
-    return "red"; // xa
+    if (gap === 0) return "green";
+    if (gap >= 1 && gap <= 3) return "darkgreen";
+    if (gap >= 4 && gap <= 6) return "lightgreen";
+    return "red";
   };
 
   return (
     <div style={{ padding: "20px" }}>
-      <h2>🎮 Game Đoán Số</h2>
+      <h2>Trò chơi đoán số</h2>
 
       {status === "idle" && (
         <div>
@@ -95,14 +93,14 @@ const GuessingGame = () => {
 
       {status === "win" && (
         <div>
-          <h3 style={{ color: "green" }}>🎉 Bạn đã đoán đúng số {secret}!</h3>
+          <h3 style={{ color: "green" }}>Bạn đã bóc trúng secret là số {secret}!</h3>
           <button onClick={() => setStatus("idle")}>Chơi lại</button>
         </div>
       )}
 
       {status === "lose" && (
         <div>
-          <h3 style={{ color: "red" }}>😢 Bạn đã thua! Số bí mật là {secret}</h3>
+          <h3 style={{ color: "red" }}>Bạn đã thuaT^T Số bí mật là {secret}</h3>
           <button onClick={() => setStatus("idle")}>Chơi lại</button>
         </div>
       )}
