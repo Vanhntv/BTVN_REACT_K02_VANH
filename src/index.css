@@ -1,0 +1,216 @@
+body {
+  background: #fff5f8;
+  font-family: "Poppins", sans-serif;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  color: #e91e63;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.toolbar input,
+.toolbar select,
+.toolbar button {
+  border: 1px solid #f8bbd0;
+  border-radius: 20px;
+  padding: 8px 14px;
+  font-size: 14px;
+  transition: 0.2s ease;
+}
+
+.toolbar input:focus,
+.toolbar select:focus {
+  outline: none;
+  border-color: #f06292;
+  box-shadow: 0 0 5px rgba(240, 98, 146, 0.4);
+}
+
+.toolbar button {
+  background: #f48fb1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.toolbar button:hover {
+  background: #ec407a;
+}
+
+.todo-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+  gap: 20px;
+}
+
+.todo-card {
+  background: white;
+  border: 1px solid #f8bbd0;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 4px 8px rgba(233, 30, 99, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.todo-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 10px rgba(233, 30, 99, 0.15);
+}
+
+.todo-card.done {
+  background: #ffeef3;
+  border-color: #f48fb1;
+  opacity: 0.9;
+}
+
+.todo-card h3 {
+  color: #d81b60;
+  margin-bottom: 6px;
+}
+
+.todo-card .desc {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.todo-card .info {
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.priority-label {
+  font-weight: 600;
+}
+
+.priority-label.high {
+  color: #e91e63;
+}
+
+.priority-label.medium {
+  color: #ff9800;
+}
+
+.priority-label.low {
+  color: #4caf50;
+}
+
+.status {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6a1b9a;
+  background: #f3e5f5;
+  padding: 4px 10px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+  gap: 8px;
+}
+
+.pagination button {
+  border: 1px solid #f8bbd0;
+  border-radius: 20px;
+  padding: 6px 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.pagination button:hover {
+  background: #fce4ec;
+}
+
+.pagination button.active {
+  background: #f48fb1;
+  color: white;
+  border-color: #f48fb1;
+}
+.todo-card {
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  font-family: "Poppins", sans-serif;
+}
+
+.todo-card.done {
+  background: #e3fcec; /* xanh nhạt */
+  border-left: 6px solid #2ecc71;
+}
+
+.todo-card.overdue {
+  background: #ffecec; /* đỏ nhạt */
+  border-left: 6px solid #e74c3c;
+}
+
+.todo-card.in-progress {
+  background: #fff8e1; /* vàng nhạt */
+  border-left: 6px solid #f1c40f;
+}
+
+.priority-high {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+.priority-medium {
+  color: #f39c12;
+}
+
+.priority-low {
+  color: #27ae60;
+}
+
+.status {
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.status.done {
+  color: #2ecc71;
+}
+
+.status.overdue {
+  color: #e74c3c;
+}
+
+.status.in-progress {
+  color: #f39c12;
+}
+
+.todo-card h3 {
+  font-size: 18px;
+  color: #444;
+}
+
+.todo-card .desc {
+  color: #666;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.todo-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
