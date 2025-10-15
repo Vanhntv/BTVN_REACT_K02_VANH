@@ -1,6 +1,9 @@
 import React from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const TodoItem = ({ task }) => {
+  const location = useLocation();
+
   const getStatus = () => {
     if (task.completed) return "Hoàn thành";
     const today = new Date();
@@ -42,9 +45,10 @@ const TodoItem = ({ task }) => {
             {getPriorityLabel()}
           </i>
         </span>
-        <br />  
+        <br />
         <span>
-          <b>Hạn chót:</b> {new Date(task.dueDate).toLocaleDateString("vi-VN")}
+          <b>Hạn chót:</b>{" "}
+          {new Date(task.dueDate).toLocaleDateString("vi-VN")}
         </span>
       </div>
 
@@ -59,6 +63,20 @@ const TodoItem = ({ task }) => {
       >
         {status}
       </p>
+
+      <Link
+        to={`/todos/${task._id}`}
+        state={{ from: location.pathname + location.search }} // 👈 thêm dòng này
+        style={{
+          display: "inline-block",
+          marginTop: 10,
+          color: "#1976d2",
+          textDecoration: "none",
+          fontWeight: "bold",
+        }}
+      >
+        Xem Chi Tiết
+      </Link>
     </div>
   );
 };

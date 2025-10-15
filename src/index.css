@@ -214,3 +214,6 @@ h1 {
   transform: scale(1.02);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
