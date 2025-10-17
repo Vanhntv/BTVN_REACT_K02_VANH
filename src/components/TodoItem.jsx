@@ -66,7 +66,7 @@ const TodoItem = ({ task }) => {
 
       <Link
         to={`/todos/${task._id}`}
-        state={{ from: location.pathname + location.search }} // 👈 thêm dòng này
+        state={{ from: location.pathname + location.search }} 
         style={{
           display: "inline-block",
           marginTop: 10,

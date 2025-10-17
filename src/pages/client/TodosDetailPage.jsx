@@ -21,7 +21,7 @@ const TodosDetailPage = () => {
   const fetchTodo = async () => {
     try {
       setLoading(true);
-      const res = await fetch(`https://api-class-o1lo.onrender.com/api/v1/todos/${id}`);
+      const res = await fetch(`https://api-class-o1lo.onrender.com/api/anhntv/todos/${id}`);
       const json = await res.json();
       if (!res.ok) throw new Error(json.message || "Lỗi khi tải công việc");
       setTodo(json.data);
@@ -38,9 +38,9 @@ const TodosDetailPage = () => {
 
   const handleBack = () => {
     if (location.state?.from) {
-      navigate(location.state.from); // 👈 quay lại đúng trang trước đó
+      navigate(location.state.from); 
     } else {
-      navigate("/todos"); // fallback nếu không có from
+      navigate("/todos"); 
     }
   };
 

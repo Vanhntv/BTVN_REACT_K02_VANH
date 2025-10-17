@@ -23,7 +23,7 @@ const HomePage = () => {
 
   const loadAllTasks = async () => {
     try {
-      const res = await fetch("https://api-class-o1lo.onrender.com/api/v1/todos");
+      const res = await fetch("https://api-class-o1lo.onrender.com/api/anhntv/todos");
       const json = await res.json();
       setAllTasks(json.data || []);
     } catch (err) {

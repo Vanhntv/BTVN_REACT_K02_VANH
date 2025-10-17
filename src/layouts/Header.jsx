@@ -34,6 +34,11 @@ function Header() {
                 Quan trọng
               </Link>
             </li>
+            <li>
+              <Link to="/admin/todos" className={linkClass("/admin/todos")}>
+                ADMIN
+              </Link>
+            </li>
           </ul>
         </nav>
       </div>

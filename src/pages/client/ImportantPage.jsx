@@ -8,7 +8,7 @@ const ImportantPage = () => {
   const fetchTodos = async () => {
     try {
       const res = await fetch(
-        "https://api-class-o1lo.onrender.com/api/v1/todos"
+        "https://api-class-o1lo.onrender.com/api/anhntv/todos"
       );
       const { data } = await res.json();
       console.log(data);
