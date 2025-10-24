@@ -3,11 +3,16 @@ import HomePage from "../pages/client/HomePage";
 import TodosDetailPage from "../pages/client/TodosDetailPage";
 import ImportantPage from "../pages/client/ImportantPage";
 import { Navigate } from "react-router-dom";
+import PrivateRoute from "./protectedRoute/PrivateRoute";
 
 const clientRoutes = [
   {
     path: "/",
-    Component: LayoutClient,
+    element: (
+      <PrivateRoute>
+        <LayoutClient />
+      </PrivateRoute>
+    ),
     children: [
       { index: true, element: <Navigate to={"/todos"} /> },
       { path: "todos", Component: HomePage },

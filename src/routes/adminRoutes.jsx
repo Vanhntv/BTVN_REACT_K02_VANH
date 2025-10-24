@@ -1,11 +1,16 @@
 import LayoutAdmin from "../layouts/LayoutAdmin";
 import ManageTodos from "../pages/admin/todos/ManageTodos";
 import TodoForm from "../pages/admin/todos/TodoForm";
+import PrivateRoute from "./protectedRoute/PrivateRoute";
 
 const adminRoutes = [
   {
     path: "admin",
-    Component: LayoutAdmin,
+    element: (
+      <PrivateRoute>
+        <LayoutAdmin />
+      </PrivateRoute>
+    ),
     children: [
       { path: "todos", Component: ManageTodos },
       { path: "todos/add", Component: TodoForm },

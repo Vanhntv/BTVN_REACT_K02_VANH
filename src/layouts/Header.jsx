@@ -1,4 +1,5 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 function Header() {
   const location = useLocation();
@@ -9,6 +10,19 @@ function Header() {
         ? "bg-pink-500 text-white shadow-md"
         : "text-pink-600 hover:bg-pink-100"
     }`;
+
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    const confirmed = window.confirm("Bạn có chắc chắn muốn đăng xuất không?");
+    if (!confirmed) return;
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    toast.success("Đăng xuất thành công");
+
+    navigate("/auth/login");
+  };
 
   return (
     <header className="bg-pink-50 shadow-sm sticky top-0 z-50">
@@ -38,6 +52,14 @@ function Header() {
               <Link to="/admin/todos" className={linkClass("/admin/todos")}>
                 ADMIN
               </Link>
+            </li>
+            <li>
+              <button
+                onClick={handleLogout}
+                className=" text-pink-600 hover:text-pink-700 transition-colors duration-200"
+              >
+                Đăng xuất
+              </button>
             </li>
           </ul>
         </nav>
